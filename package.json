@@ -1,6 +1,6 @@
 {
   "name": "@nodegit/read-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Read config for @nodegit commands",
   "main": "src/index.js",
   "scripts": {

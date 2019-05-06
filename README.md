@@ -41,7 +41,20 @@ console.log(await read())
 - **name** `string` name of the config which indicates that the config file will be located at `~/.nodegit/config/${name}.js`
 - **options** `Object`
   - **defaults?** `Object` the default value of the configuration
-  - **defaultFileContent?** `path` the default configuration file to be used if there is no config file found.
+  - **defaultFileContent?** `string | Buffer` the default configuration content to be used if there is no config file found.
+
+If `options.defaults` is specified, then it will ignore `options.defaultFileContent`.
+
+```js
+const {read} = config('push', {
+  defaultFileContent:
+`module.exports = {
+  editor: 'vscode'
+}`
+})
+
+const {editor} = await read()
+```
 
 ### await read(): Object
 
